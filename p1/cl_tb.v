@@ -13,19 +13,19 @@ begin
     $dumpfile("cl_tb.vcd");
     $dumpvars;
 
-    test_a = 1'b1;
-    test_b = 1'b0;
-    test_clop = 2'b00;
+    test_a = 0;
+    test_b = 1;
+    test_clop = 2'b01;
     #20;
 
-    test_a = 1'b0;
-    test_b = 1'b1;
-    test_clop = 2'b00;
+    test_a = 1;
+    test_b = 1;
+    test_clop = 2'b10;
     #20;
 
-    test_a = 1'b1;
-    test_b = 1'b1;
-    test_clop = 2'b00;
+    test_a = 0;
+    test_b = 1;
+    test_clop = 2'b11;
     #20;
 
     $finish;

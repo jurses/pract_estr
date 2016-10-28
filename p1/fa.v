@@ -1,3 +1,4 @@
+//funciona correctamente
 module fa(output wire cout, sum, input wire a,b,cin);
 wire s_xor, s_and1, s_and2;
 xor(s_xor,a,b);
