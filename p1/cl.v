@@ -1,11 +1,15 @@
 module cl(output reg out, input wire a, b, input wire [1:0] s);
-wire s_and, s_or, s_xor, s_not, mux_out;
+wire s_and, s_or, s_xor, s_not;
+output wire mux_out;
+
 assign mux_out = out;
-and(s_and,a,b);
-or(s_or,a,b);
-xor(s_xor,a,b);
-not(s_not,a);
-//module mux4_1(output reg out, input wire a, b, c, d, input wire[1:0] s);
-mux4_1 mux_cl(mux_out, s_and, s_or, s_xor, s_not, s);
+
+mux4_1 mux_cl(mux_out, 1'b0, 1'b1, 1'b1, s_not, 2'b01);
+
+
+and(s_and,a,b); // 00
+or(s_or,a,b);   // 01
+xor(s_xor,a,b); // 10
+not(s_not,a);   // 11
 
 endmodule
