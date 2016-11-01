@@ -21,8 +21,22 @@ begin
 
     test_a = 1'b0;
     test_b = 1'b1;
+    test_l = 1'b1;
+    test_cin = 1'b0;
+    test_s = 2'b00;
+    #20;
+
+    test_a = 1'b1;
+    test_b = 1'b1;
     test_l = 1'b0;
     test_cin = 1'b0;
+    test_s = 2'b00;
+    #20;
+
+    test_a = 1'b1;
+    test_b = 1'b1;
+    test_l = 1'b0;
+    test_cin = 1'b1;
     test_s = 2'b00;
     #20;
     $finish;
