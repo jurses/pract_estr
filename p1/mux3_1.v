@@ -4,7 +4,10 @@ module mux3_1(output reg out, c_out, input wire a, b, c, input wire s);
 			0:	begin
 				c_out = b; out = a;
 				end
-			1: out = c;
+			1:	begin
+				out = c;
+				c_out = 1'bx;
+				end
 			default:	begin
 						c_out = 0; out = 0;
 						end
