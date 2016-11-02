@@ -3,7 +3,7 @@ module cpl1_tb;
 
 reg[3:0] ent;
 wire[3:0] sal;
-cpl1 cpl11(sal, ent, 1'b0);
+cpl1 cpl11(sal, ent, 1'b1);
 
 initial
 begin

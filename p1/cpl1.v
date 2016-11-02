@@ -1,23 +1,13 @@
 module cpl1(output wire [3:0] Sal, input wire [3:0] Ent, input wire cpl);
-reg aux[3:0];
-always@*
-begin
-	if(cpl == 1) begin
-		aux[0] = !Ent[0];
-		aux[1] = !Ent[1];
-		aux[2] = !Ent[2];
-		aux[3] = !Ent[3];
-	end
-	else
-	begin
-		aux[0] = Ent[0];
-		aux[1] = Ent[1];
-		aux[2] = Ent[2];
-		aux[3] = Ent[3];
-	end
-end
-assign Sal[0] = aux[0];
-assign Sal[1] = aux[1];
-assign Sal[2] = aux[2];
-assign Sal[3] = aux[3];
+wire [3:0] n_Ent;
+
+not inv1(n_Ent[0], Ent[0]);
+not inv2(n_Ent[1], Ent[1]);
+not inv3(n_Ent[2], Ent[2]);
+not inv4(n_Ent[3], Ent[3]);
+
+mux2_1_i1 mux1(Sal[0], Ent[0], n_Ent[0], cpl);
+mux2_1_i1 mux2(Sal[1], Ent[1], n_Ent[1], cpl);
+mux2_1_i1 mux3(Sal[2], Ent[2], n_Ent[2], cpl);
+mux2_1_i1 mux4(Sal[3], Ent[3], n_Ent[3], cpl);
 endmodule
