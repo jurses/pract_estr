@@ -17,50 +17,63 @@ begin
   $dumpvars;
   $monitor("tiempo=%0d A=%b B=%b L=%b Op=%b R=%b, Z=%b, C=%b, S=%b", $time, t_A, t_B, t_L, t_Op, t_R, t_z, t_c, t_s);
   //vector de test 0, suma 1000 acarreo, negativo
+  //0
   t_A = 4'b1010;
   t_B = 4'b1110;
   t_Op = 2'b00;
   t_L = 1'b0;
   # 20;
+
   //vector de test 1 suma 0000 cero, acarreo
+  //20
   t_A = 4'b1010;
   t_B = 4'b0110;
   t_Op = 2'b00;
   t_L = 1'b0;
   # 20;
+
   //vector de test 2 resta 0000 cero
+  //40
   t_A = 4'b1010;
   t_B = 4'b1010;
   t_Op = 2'b01;
   t_L = 1'b0;
   # 20;
+
   //vector de test 3 com2 de B 0010
+  //60
   t_A = 4'b1011;
   t_B = 4'b1110;
   t_Op = 2'b11;
   t_L = 1'b0;
-
   # 20;
+
   //vector de test 4 com2 de A 0010
+  //80
   t_A = 4'b1110;
   t_B = 4'b1010;
   t_Op = 2'b10;
   t_L = 1'b0;
-
   # 20;
+
   //vector de test 5 and 1000
+  //100
   t_A = 4'b1010;
   t_B = 4'b1100;
   t_Op = 2'b00;
   t_L = 1'b1;
   # 20;
+
   //vector de test 6 xor 0110
+  //120
   t_A = 4'b1010;
   t_B = 4'b1100;
   t_Op = 2'b10;
   t_L = 1'b1;
   # 20;
+
   //vector de test 7 inv A 0101
+  //140
   t_A = 4'b1010;
   t_B = 4'b1100;
   t_Op = 2'b11;
